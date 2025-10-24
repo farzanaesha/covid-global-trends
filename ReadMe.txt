@@ -38,18 +38,6 @@ Tools & Technologies
 - Excel (for initial filtering and validation)
 - GeoJSON for choropleth mapping
 
-Folder Structure
-----------------
-data/
-  ├── raw/
-  └── cleaned/
-notebooks/
-  └── covid_analysis.ipynb
-visuals/
-  ├── death_choropleth.png
-  └── recovery_choropleth.png
-README.txt
-
 Limitations
 -----------
 - Recovery data was missing for most countries, limiting global completeness
@@ -59,4 +47,5 @@ Next Steps
 ----------
 - Integrate vaccination data for survival analysis
 - Explore time-series trends and variant-specific impacts
+
 - Expand recovery mapping as more data becomes available
