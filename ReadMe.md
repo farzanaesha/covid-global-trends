@@ -48,5 +48,29 @@ This project presents a comprehensive analysis of global COVID-19 trends, focusi
 - GeoJSON (for choropleth mapping)
 
 ---
+## ⚠️ Limitations
+- Recovery data was missing for most countries, limiting global completeness
+- Death rates may be affected by underreporting or inconsistent testing policies
 
-## 📁 Folder Structure
+---
+
+## 🚀 Future Enhancements
+- Integrate vaccination data for survival analysis
+- Explore time-series trends and variant-specific impacts
+- Expand recovery mapping as more data becomes available
+
+---
+
+## 📜 License
+This project is licensed under the [MIT License](LICENSE.txt).
+
+---
+
+## 🙋‍♀️ Author
+**Farzana**  
+Mathematics graduate | Data wrangler | COVID-19 mapping enthusiast  
+Currently pursuing BSc in Computer Science at University of the People
+
+---
+
+
