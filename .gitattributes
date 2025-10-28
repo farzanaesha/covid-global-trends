@@ -1,0 +1,4 @@
+data/notebooks/*.csv filter=lfs diff=lfs merge=lfs -text
+data/notebooks/covid_analysis.csv filter=lfs diff=lfs merge=lfs -text
+data/notebooks/covid_countries.csv filter=lfs diff=lfs merge=lfs -text
+*.html filter=lfs diff=lfs merge=lfs -text
