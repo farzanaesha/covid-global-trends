@@ -1,76 +1,122 @@
-# 🗺️ Mapping Survival and Mortality Trends of COVID-19: A Global Perspective
+Global COVID-19 Impact Analysis: Policy, Comorbidities, and Mortality Trends
 
-## 📌 Project Overview
-This project presents a comprehensive analysis of global COVID-19 trends, focusing on mortality and recovery patterns across countries. Using over **12.5 million rows of raw, messy data**, I cleaned, transformed, and visualized key indicators to uncover insights into the pandemic’s global footprint.
+📌 Project Overview
 
----
+This project presents a comprehensive, two-stage analysis of global COVID-19 data, focusing on the interplay between government intervention (Stringency Index), underlying health factors (comorbidities), and resulting mortality rates.
 
-## 🎯 Objectives
-- Clean and preprocess a massive dataset of global COVID-19 statistics
-- Identify the **top 10 countries by total deaths**
-- Highlight the **top 10 most affected countries by confirmed cases**
-- Create **choropleth maps** to visualize:
-  - Total deaths across **221 countries**
-  - Recovery numbers across **19 countries** (due to missing data in others)
+The analysis utilizes advanced techniques, including time-lagged correlation and geographical mapping, to provide a data-driven understanding of the pandemic's severity and policy outcomes across different nations.
 
----
+📁 Project Structure
 
-## 🧹 Data Cleaning Highlights
-- Parsed and validated over **12.5 million records** from multiple sources
-- Handled missing values, inconsistent formats, and country-level aggregation
-- Ensured accurate alignment of cumulative metrics (confirmed, deceased, recovered)
+The project is organized into dedicated folders for clarity and reproducibility:
 
----
+Folder
 
-## 📊 Key Findings
-- **Top 10 countries by total deaths** include: United States, Brazil, India, Russia, Mexico, and others
-- **Top 10 most affected countries by confirmed cases** include: United States, India, France, Germany, Brazil, etc.
-- Recovery data was only available for **19 countries**, requiring selective mapping and annotation
+File
 
----
+Purpose
 
-## 🌍 Visualizations
-- **Global Choropleth Map of Total Deaths**  
-  Highlights mortality intensity across 221 countries
+data/notebooks/
 
-- **Global Choropleth Map of Recoveries**  
-  Focused view of recovery trends where data was available
+covid_analysis.csv
 
-- **Bar Charts**  
-  Top 10 countries by deaths and confirmed cases
+Original Raw Data (Source for the entire analysis).
 
----
+data/notebooks/
 
-## 🛠️ Tools & Technologies
-- Python: `pandas`, `numpy`, `plotly`, `cufflinks`
-- Jupyter Notebook
-- Excel (for initial filtering and validation)
-- GeoJSON (for choropleth mapping)
+data_cleaning.ipynb
 
----
-## ⚠️ Limitations
-- Recovery data was missing for most countries, limiting global completeness
-- Death rates may be affected by underreporting or inconsistent testing policies
+Stage 1: Cleans, preprocesses, and refines the original data.
 
----
+data/notebooks/
 
-## 🚀 Future Enhancements
-- Integrate vaccination data for survival analysis
-- Explore time-series trends and variant-specific impacts
-- Expand recovery mapping as more data becomes available
+data_exploration_visualization.ipynb
 
----
+Stage 2: Loads refined data, performs analysis, and generates all final visualizations.
 
-## 📜 License
-This project is licensed under the [MIT License](LICENSE.txt).
+data/notebooks/
 
----
+covid_countries.csv, etc.
 
-## 🙋‍♀️ Author
-**Farzana**  
-Mathematics graduate | Data wrangler | COVID-19 mapping enthusiast  
-Currently pursuing BSc in Computer Science at University of the People
+Refined Data Files used by the visualization notebook.
 
----
+visuals/
+
+*.png
+
+Contains exported images for easy viewing.
+
+🔑 Key Data Sources
+
+The analysis begins with the primary dataset provided by Our World in Data (OWID). The refined CSV files used for exploration are generated in the data_cleaning.ipynb step.
+
+Primary Source URL: https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv
+
+data/notebooks/covid_analysis.csv (The primary raw file used to start the cleaning process).
+
+data/notebooks/covid_countries.csv (Country-day level data after initial cleaning)
+
+data/notebooks/covid_latest_valid_mortality.csv (Aggregated data for cross-country comparisons)
+
+🛠️ Environment and Prerequisites
+
+To successfully run both Jupyter Notebooks, you need a Python environment with the following libraries:
+
+pip install pandas numpy seaborn matplotlib plotly cufflinks jupyter
 
 
+📊 Core Analysis & Visualizations
+
+The data_exploration_visualization.ipynb notebook explores three core analytical themes:
+
+1. Analysis of Policy Effectiveness (Stringency Index)
+
+This investigation uses a 21-day time lag to assess the potential impact of non-pharmaceutical interventions (NPIs) on mortality.
+
+Global Correlation Distribution: A histogram summarizing the Pearson correlation coefficient ($r$) between the lagged Stringency Index and Daily Deaths Per Million (DPM).
+
+Geographic Correlation: A Choropleth Map visualizing the correlation coefficient ($r$) for each country, showing where policy was effective (negative $r$) or driven by mortality (positive $r$).
+
+Country-Specific Time Series: A dual-axis line plot tracking the 7-day average of DPM and the lagged Stringency Index over time for a specific country (e.g., Bangladesh).
+
+2. Global Mortality Trend Analysis
+
+Continental Mortality Waves: A line plot tracking the 7-day rolling average of new deaths per million for each continent, essential for comparing the timing and severity of different waves globally.
+
+Absolute Impact Comparison: A dual bar plot comparing Total Cumulative Cases and Total Cumulative Deaths for the Top 10 most affected countries in absolute terms.
+
+3. Impact of Comorbidity
+
+Diabetes Prevalence vs. Mortality: A scatter plot visualizing the relationship between a country's baseline Diabetes Prevalence (%) and its Total COVID-19 Deaths per Million, assessing the influence of pre-existing health on outcome.
+
+🎯 Key Findings
+
+Based on the statistical and visual evidence generated:
+
+Policy & Causality: The mean global correlation ($r$) is near zero or slightly positive, suggesting that reverse causality (high mortality rates forcing governments to adopt stricter measures) is the dominant global trend, masking any direct negative policy effect. Policy effectiveness was highly country-specific.
+
+Continental Disparities: The line plot clearly shows distinct mortality waves across continents, with varying peak heights and timing, reflecting differences in policy, healthcare capacity, and population demographics.
+
+Mortality Burden: The DPM choropleth and continental waves confirm that the mortality burden (relative to population) was unevenly distributed, with specific regions bearing disproportionately high death rates.
+
+Absolute Scale: The Top 10 bar plot underscores the sheer scale of the pandemic's footprint in absolute numbers across a handful of major nations.
+
+⚠️ Limitations
+
+Data Completeness: Several socio-demographic indicators and recovery data columns contained high proportions of missing values, limiting the scope of some cross-country comparisons.
+
+Reverse Causality: The Stringency Index correlation is heavily influenced by the government's reactive behavior, making it difficult to isolate the true causal effect of the policy itself.
+
+Data Consistency: Death rates are inherently affected by differences in national testing capacity, reporting standards, and classification of COVID-19 related deaths.
+
+🚀 Future Enhancements
+
+Vaccination Impact: Integrate global vaccination data to perform survival analysis and assess the impact of immunization campaigns on subsequent DPM.
+
+Advanced Time Series: Implement a Cross-Correlation Function (CCF) analysis to find the optimal lag time (which may not be 21 days for all countries) between policy action and mortality.
+
+Economic Impact: Correlate mortality and policy metrics with economic data (e.g., GDP change) to assess the economic trade-offs of stringent policies.
+
+🙋‍♀️ Author
+
+Farzana Anjum Esha | BSc in Mathematics
