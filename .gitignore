@@ -1,0 +1,11 @@
+# Windows system files
+desktop.ini
+Thumbs.db
+
+# Dependencies (Example: for Python projects)
+__pycache__/
+*.pyc
+.venv/
+
+# Logs and output
+*.log 
