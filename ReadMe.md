@@ -18,7 +18,7 @@ The project is organized into dedicated folders for clarity and reproducibility:
 | `data/notebooks/` | `data_cleaning.ipynb` | **Stage 1:** Cleans, preprocesses, and refines the original data. |
 | `data/notebooks/` | `data_exploration_visualization.ipynb` | **Stage 2:** Loads refined data, performs analysis, and generates all final visualizations. |
 | `data/notebooks/` | `covid_countries.csv`, etc. | **Refined Data Files** used by the visualization notebook. |
-| `visuals/` | `*.png` | Contains exported images for easy viewing (No HTML). |
+| `visuals/` | `*.html` | Contains exported .html for interactive viewing |
 
 ---
 
