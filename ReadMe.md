@@ -1,6 +1,6 @@
 # Global COVID-19 Impact Analysis: Policy, Comorbidities, and Mortality Trends
 
-## 📌 Project Overview
+## Project Overview
 
 This project presents a comprehensive, two-stage analysis of global COVID-19 data, focusing on the interplay between government intervention (**Stringency Index**), underlying health factors (**comorbidities**), and resulting mortality rates.
 
@@ -8,7 +8,7 @@ The analysis utilizes advanced techniques, including **time-lagged correlation**
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 The project is organized into dedicated folders for clarity and reproducibility:
 
@@ -22,7 +22,7 @@ The project is organized into dedicated folders for clarity and reproducibility:
 
 ---
 
-## 🔑 Key Data Sources
+## Key Data Sources
 
 The analysis begins with the primary dataset provided by **Our World in Data (OWID)**. The refined CSV files used for exploration are generated in the `data_cleaning.ipynb` step.
 
@@ -33,7 +33,7 @@ The analysis begins with the primary dataset provided by **Our World in Data (OW
 
 ---
 
-## 🛠️ Environment and Prerequisites
+## Environment and Prerequisites
 
 To successfully run both Jupyter Notebooks, you need a Python environment with the following libraries and data dependencies:
 
@@ -42,7 +42,7 @@ To successfully run both Jupyter Notebooks, you need a Python environment with t
 * pip install pandas numpy seaborn matplotlib plotly cufflinks jupyter
 ---
 
-## 📊 Core Analysis & Visualizations
+## Core Analysis & Visualizations
 
 The `data_exploration_visualization.ipynb` notebook explores three core analytical themes:
 
@@ -65,7 +65,7 @@ This investigation uses a **21-day time lag** to assess the potential impact of 
 
 ---
 
-## 🎯 Key Findings
+## Key Findings
 
 Based on the statistical and visual evidence generated:
 
@@ -76,7 +76,7 @@ Based on the statistical and visual evidence generated:
 
 ---
 
-## ⚠️ Limitations
+## Limitations
 
 * **Data Completeness:** Several socio-demographic indicators and recovery data columns contained high proportions of missing values, limiting the scope of some cross-country comparisons.
 * **Recovery Data:** Recovery data was missing for most countries, limiting global completeness.
@@ -85,7 +85,7 @@ Based on the statistical and visual evidence generated:
 
 ---
 
-## 🚀 Future Enhancements
+## Future Enhancements
 
 * **Vaccination Impact:** Integrate vaccination data for survival analysis.
 * **Advanced Time Series:** Explore time-series trends and variant-specific impacts.
@@ -94,8 +94,3 @@ Based on the statistical and visual evidence generated:
 
 ---
 
-
-## ✍️ Author
-
-**Farzana Anjum Esha** | BSc. in Mathematics
-```eof
